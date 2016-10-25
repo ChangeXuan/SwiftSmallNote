@@ -17,4 +17,4 @@
 - 在使用地图进行路线请求时，如果请求的点不在道路上，那就可能造成路线的点与标注点不重合。
 - xcode8兼容8.0以下的系统http://blog.csdn.net/CodingFire/article/details/52638265 (但是有一个问题，就是你不是开发者账号，就是付费账号，你是不能添加新的设备)
 - All interface orientations must be supported unless the app requires full screen.这个警告信息的解决方法是General->Deployment Info->勾选Requires full screen(http://stackoverflow.com/questions/31141806/xcode-7-beta-warnings-interface-orientations-and-launch-storyboard)
-- 给navigation设置title时，要把这项设置放在其他navigation设置之后
+- 给navigation设置title时，要把这项设置放在其他navigation设置之后(这个说法是错的。。。。刚刚发现是自己的bug。。。)
