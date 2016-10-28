@@ -19,3 +19,4 @@
 - All interface orientations must be supported unless the app requires full screen.这个警告信息的解决方法是General->Deployment Info->勾选Requires full screen(http://stackoverflow.com/questions/31141806/xcode-7-beta-warnings-interface-orientations-and-launch-storyboard)
 - 给navigation设置title时，要把这项设置放在其他navigation设置之后(这个说法是错的。。。。刚刚发现是自己的bug。。。)
 - UIlable可以借助addAttribute属性来对一段文字附上不同的颜色
+- 一些比较好的注意事项(我犯了其中的多数错误)http://www.cocoachina.com/ios/20161025/17849.html
