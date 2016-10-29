@@ -20,3 +20,7 @@
 - 给navigation设置title时，要把这项设置放在其他navigation设置之后(这个说法是错的。。。。刚刚发现是自己的bug。。。)
 - UIlable可以借助addAttribute属性来对一段文字附上不同的颜色
 - 一些比较好的注意事项(我犯了其中的多数错误)http://www.cocoachina.com/ios/20161025/17849.html
+- 对于项目中的重复代码，如果这个代码是用来处理基础类型的(string，int，cgfloat等)，那可以使用extension来扩展该类型
+-  移除数组中的指定值，使用filter比较好(有一个数组ary:[String] = ["qin","zi","xuan"],当我想把"zi"去掉，可以这样使用filter：ary = ary.filter({$0 != "zi"}))
+- 泛型是一个很好的特性，在以后的代码中我要多次尝试。
+- 在项目中，必须确保资源库是现场安全的
