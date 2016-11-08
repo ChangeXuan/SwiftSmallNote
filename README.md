@@ -28,3 +28,5 @@
 - 如果在sb种想把静态tabelView放在自己定义的viewController中，会发生错误。解决办法：1：先往自己的viewController中添加一个Container View(拖入Container View后，系统会自动生成一根连线和一个新的ViewController) 2：把系统自动生成的东西都删掉 3：拖入一个新的tabelViewController，并从Container View中右键拉出线指向新的tabelViewController，选择Embed
 - 关于自定义navigation的高度，可以看看这个博客http://www.cnblogs.com/wangyang1213/p/5308664.html
 - 字体模糊的完全解决，妈的，控件的起始点必须是整数，起始点
+- 聊天界面的对话框应该使用.9图片作为气泡背景
+- 使用自己画线时，回产生线短粗细问题
