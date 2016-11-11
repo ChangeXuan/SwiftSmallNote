@@ -34,3 +34,4 @@
 - 但需要某些人物以指定的顺序去执行时，串行队列是一个非常好的选择
 - 如果要修改navigation的全局属性，比如title的颜色，必须要在第一个navigation种设置。或者，在每个controller的viewWillAppear中设置
 - 我的笔记本电脑显示的颜色和我外接显示器的颜色有点不一样
+- 因为swift的init只会调用一次，因此在init中我们可以为常量进行赋值
