@@ -40,3 +40,4 @@
 - 创建一个新队列不一定能创建一个新线程
 - shadowOffset = size(width:3,height:-3)  //阴影形状向右移3，向上移3
 - player.rate = 0.5 设置播放速率为0.5
+- NSDateFormatter是一项成本相当高昂的操做，如果需要设置大量日期的格式，可以创建一个NSDateFormatter并将其保存下来，而不是每次需要格式化一个日期时都创建一个新的
