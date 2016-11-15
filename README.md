@@ -41,3 +41,4 @@
 - shadowOffset = size(width:3,height:-3)  //阴影形状向右移3，向上移3
 - player.rate = 0.5 设置播放速率为0.5
 - NSDateFormatter是一项成本相当高昂的操做，如果需要设置大量日期的格式，可以创建一个NSDateFormatter并将其保存下来，而不是每次需要格式化一个日期时都创建一个新的
+- 如果没有动态特性需求的话，保持在swift基本类型中会让我们得到更多的性能提升
