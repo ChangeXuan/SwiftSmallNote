@@ -45,3 +45,10 @@
 - 在iOS10/xcode8中，当使用rsa加密算法时出现的空值错误，需要到prj->Capabilities->keychain sharing中选择NO
 - 可以使用Instruments工具查看内存是否泄漏
 - Instruments工具的使用：运行程序->Debug Session->Memory->Profile in Instruments
+- 不通过按钮来调用按钮的响应函数:buttonAction(button as! UIButton),有参时
+- 初始化固定内容数组时可以采用lazy的初始化方式
+- 移除所有按钮(可拓展为某个控件)xx = subviews.map{if $0.classForCoder == UIButton.classForCoder() {$0.removeFromSuperview()}}
+- a??1 //如果a为nil，返回1，否则返回a
+- 使用convenience关键字可以复写多个父类中的init
+- 使用16进制来表示颜色：view.backgroudColor = UIColor.hexInt(0xf3f3f3)
+- 在回调使用中，在闭包头加上[unowned self]
