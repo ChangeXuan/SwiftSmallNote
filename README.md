@@ -50,5 +50,5 @@
 - 移除所有按钮(可拓展为某个控件)xx = subviews.map{if $0.classForCoder == UIButton.classForCoder() {$0.removeFromSuperview()}}
 - a??1 //如果a为nil，返回1，否则返回a
 - 使用convenience关键字可以复写多个父类中的init
-- 使用16进制来表示颜色：view.backgroudColor = UIColor.hexInt(0xf3f3f3)
+- 使用16进制来表示颜色：view.backgroudColor = UIColor.hexInt(0xf3f3f3)//这个要自己实现
 - 在回调使用中，在闭包头加上[unowned self]
