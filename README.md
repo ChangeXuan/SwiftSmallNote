@@ -52,3 +52,5 @@
 - 使用convenience关键字可以复写多个父类中的init
 - 使用16进制来表示颜色：view.backgroudColor = UIColor.hexInt(0xf3f3f3)//这个要自己实现
 - 在回调使用中，在闭包头加上[unowned self]
+- 看到一篇关于描述“线程”和“进程”的文章，个人认为写得比较通俗易懂http://www.ruanyifeng.com/blog/2013/04/processes_and_threads.html
+- 拓展swift的协议方法后，可以直接在遵循该协议的class中调用拓展的协议方法
