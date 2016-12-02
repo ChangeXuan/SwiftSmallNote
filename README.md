@@ -54,3 +54,10 @@
 - 在回调使用中，在闭包头加上[unowned self]
 - 看到一篇关于描述“线程”和“进程”的文章，个人认为写得比较通俗易懂http://www.ruanyifeng.com/blog/2013/04/processes_and_threads.html
 - 拓展swift的协议方法后，可以直接在遵循该协议的class中调用拓展的协议方法
+- 是navigationBar变透明，并把下端的那条黑线去掉
+```
+let img = UIImage()
+self.navigationController.navigationBar.setBackgroundImage(img,for:.default)
+self.navigationController.nacigationBar.shadowImage = img
+self.navigationController.navigationBar.barStyle = .blackOpaque
+```
