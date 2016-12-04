@@ -61,3 +61,9 @@ self.navigationController.navigationBar.setBackgroundImage(img,for:.default)
 self.navigationController.nacigationBar.shadowImage = img
 self.navigationController.navigationBar.barStyle = .blackOpaque
 ```
+
+- 在iOS10设备上出现的键盘第一次弹起时获取的高度不对的问题，使用下面代码可以获得正确的高度
+```
+let keyInfo = (notification as NSNotification).userInfo![UIKeyboardFrameEndUserInfoKey]
+let height:CGFloat = (keyInfo! as AnyObject).cgRectValue.size.height
+```
