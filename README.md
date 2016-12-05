@@ -67,3 +67,16 @@ self.navigationController.navigationBar.barStyle = .blackOpaque
 let keyInfo = (notification as NSNotification).userInfo![UIKeyboardFrameEndUserInfoKey]
 let height:CGFloat = (keyInfo! as AnyObject).cgRectValue.size.height//(origin.y)
 ```
+
+- tableView.reloadData()后想让tableView滑至最低端
+```
+let sectionCout:Int = self.contentTableView.numberOfSections
+        if sectionCout != 0 {
+            let rowC = self.contentTableView.numberOfRows(inSection: 0)
+            if rowC != 0 {
+                let ii = [0,rowC-1]
+                let indexPath = NSIndexPath.init(indexes: ii, length: ii.count)
+                self.contentTableView.scrollToRow(at: indexPath as IndexPath, at: .bottom, animated: false)
+            }
+        }
+```
