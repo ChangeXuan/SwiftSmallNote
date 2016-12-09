@@ -80,3 +80,5 @@ let sectionCout:Int = self.contentTableView.numberOfSections
             }
         }
 ```
+
+- 使用stack装载图片时，需要先把约束建立好，再设置stackView中的Distribution为Fill Equally
