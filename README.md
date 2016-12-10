@@ -82,3 +82,4 @@ let sectionCout:Int = self.contentTableView.numberOfSections
 ```
 
 - 使用stack装载图片时，需要先把约束建立好，再设置stackView中的Distribution为Fill Equally
+- 在使用autolayout和约束进行布局时，如果要对某个对象添加阴影，应该在veiwWillLayoutSubviews中添加(其他的layout属性也是这样)
