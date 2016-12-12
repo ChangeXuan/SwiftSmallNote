@@ -99,3 +99,5 @@ func delay(_ timeInterval:TimeInterval,_ block: @escaping () -> Void) {
         DispatchQueue.main.asyncAfter(deadline:after,execute:block)
      }
 ```
+
+- 可以通过widget来增加程序的互动性
