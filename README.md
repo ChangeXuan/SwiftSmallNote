@@ -91,3 +91,11 @@ guard let text = xxxx.text , let xxxText = Int(text) else {
         return
 }
 ```
+
+- 猫神写的延时操作，记录下：
+```
+func delay(_ timeInterval:TimeInterval,_ block: @escaping () -> Void) {
+        let after = DispatchTime.now() + timeInterval
+        DispatchQueue.main.asyncAfter(deadline:after,execute:block)
+     }
+```
