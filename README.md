@@ -103,3 +103,7 @@ func delay(_ timeInterval:TimeInterval,_ block: @escaping () -> Void) {
 - 可以通过widget来增加程序的互动性
 - 约束可以像控件一样拖入代码区然后进行属性修改
 - 当改变约束属性，并且想实现动画效果时，需要加上view.layoutIfNeeded()
+- 让textView从开头开始显示
+```
+self.textView.scrollRangeToVisible(NSRange(location:0,length:1))
+```
