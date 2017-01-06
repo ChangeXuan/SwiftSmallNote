@@ -107,3 +107,31 @@ func delay(_ timeInterval:TimeInterval,_ block: @escaping () -> Void) {
 ```
 self.textView.scrollRangeToVisible(NSRange(location:0,length:1))
 ```
+
+- 关于alamofire的get请求中中文问题：http://blog.csdn.net/u014134886/article/details/50997803
+```
+//错误示例
+ let url : URLStringConvertible = "http://bai.com/test2/login/get.php?mobile=\(userPhone)&rename=\(username)"
+
+//正常示例
+ let url : URLStringConvertible = "http://baidu.tk/test2/login/register.php"
+            let para=["mobile": userPhone,""rename": username];
+            Alamofire.request(.GET, url ,parameters: para).responseJSON{ response in
+                if let JSON = response.result.value
+                {
+                    if JSON["msg"] as! String == "1"
+                    {
+                        self.registerActivity.stopAnimating()
+                        //self.dismissViewControllerAnimated(true, completion: nil)
+                        self.showAlert("成功", alertMessage: "成功，请返回", actionTitle: "确定")
+                       self.navigationController?.popViewControllerAnimated(true)
+                    }
+                    else
+                    {
+                        self.registerActivity.stopAnimating()
+                        self.showAlert("出错", alertMessage: "", actionTitle: "确定")
+                    }
+                }
+
+            }
+```
