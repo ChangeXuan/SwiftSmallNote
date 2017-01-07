@@ -135,3 +135,10 @@ self.textView.scrollRangeToVisible(NSRange(location:0,length:1))
 
             }
 ```
+
+- 改变点击cell时的高亮颜色
+```
+let tapCellColor:UIColor = UIColor(red:96/255,green:54/255,blue:12/255,alpha:1.0)
+cell.selectedBackgroundView = UIView(frame:cell.frame)
+cell.selectedBackgroundView.backgroundColor = tapCellColor
+```
