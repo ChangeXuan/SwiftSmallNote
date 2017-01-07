@@ -146,3 +146,10 @@ let tapCellColor:UIColor = UIColor(red:96/255,green:54/255,blue:12/255,alpha:1.0
 cell.selectedBackgroundView = UIView(frame:cell.frame)
 cell.selectedBackgroundView.backgroundColor = tapCellColor
 ```
+
+- 设置navigation的title，以及设置返回键和title的颜色
+```
+self.navigationItem.title = "xxx"//设置标题
+self.navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor]//设置title的颜色
+self.navigationController.navigationBar.tintColor = UIColor//设置返回键的颜色
+```
