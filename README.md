@@ -70,6 +70,7 @@ let height:CGFloat = (keyInfo! as AnyObject).cgRectValue.size.height//(origin.y)
 
 - tableView.reloadData()后想让tableView滑至最低端
 ```
+（有问题）
 let sectionCout:Int = self.contentTableView.numberOfSections
         if sectionCout != 0 {
             let rowC = self.contentTableView.numberOfRows(inSection: 0)
@@ -79,6 +80,9 @@ let sectionCout:Int = self.contentTableView.numberOfSections
                 self.contentTableView.scrollToRow(at: indexPath as IndexPath, at: .bottom, animated: false)
             }
         }
+     
+（新方法）
+self.contantTableView.setContentOffset(CGPoint(x:0,y:self.contantTableView.frame.height),animated:false)
 ```
 
 - 使用stack装载图片时，需要先把约束建立好，再设置stackView中的Distribution为Fill Equally
