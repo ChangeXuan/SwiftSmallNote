@@ -153,3 +153,38 @@ self.navigationItem.title = "xxx"//设置标题
 self.navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor]//设置title的颜色
 self.navigationController.navigationBar.tintColor = UIColor//设置返回键的颜色
 ```
+
+- 自适应内容的label(使用sizeThatFites和sizeToFit)
+```
+let label = UILable(frame:CGRect(x:100,y:100,width:0,height:0))
+label.font = UIFont.systemFont(ofSize:20)
+label.text = "hello label"
+label.sizeToFit()
+```
+
+- 帧数计算方法(使用CADisplayLink)
+```
+var lastTime:TimeInterval = 0
+var count:Int = 0
+
+//每当屏幕刷新时都会调用tick函数(60帧就是在1秒内调用60次tick)
+let disPlayLink = CADisplayLink(target:self,selector:#selector(tick))
+disPlayLink.add(to:RunLoop.main,forMode:.commonModes)
+
+func tick(link:CADisplayLink) {
+    //判断是不是第一次进入该定时函数
+    if lastTime == 0 {
+        lastTime = link.timestamp       //把当前的时间戳存入lastTime中
+        return
+    }
+    count += 1  //记录刷新的次数
+    let delta:TimeInterval = link.timestamp - lastTime  //把当前时间戳与上一段时间戳进行比较
+    if delta < 1 {      //当delta小于1时，说明还没到1秒的时间
+        return
+    }
+    
+    lastTime = link.timestamp   //更新时间戳
+    let fps = Double(count) / dalta     //刷新次数 / 时间 = 帧数
+    let fpsText = Int(round(fps))       //取整后转为Int型
+}
+```
