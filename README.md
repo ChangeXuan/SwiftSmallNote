@@ -201,3 +201,20 @@ two:
 let docDir = NSSearchPathForDirectoiesInDomains(.documentDirectory,.userDomainMask,true)[0]
 let addUrl = docDir + "String"
 ```
+
+- 强制结束block动画
+```
+例如，我对一个testView进行动画描述
+UIView.animate(withDuration: 2, delay: 0, options: [.repeat,.autoreverse,.curveEaseInOut], animations: { 
+            self.testView.alpha = 0
+            }) { (finish) in
+                if !finish {
+                    self.testView.alpha = 1
+                    return
+                }
+        }
+当我想取消这个循环动画时，只需要在某个地方调用
+self.testView.layer.removeAllAnimations()
+调用完该方法后，上述动画中的finish就会取得一个false值，表示的是改动画不是正常结束
+接着return就可以将之间邦在testView上的动画删除了
+```
