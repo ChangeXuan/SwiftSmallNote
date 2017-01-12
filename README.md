@@ -188,3 +188,16 @@ func tick(link:CADisplayLink) {
     let fpsText = Int(round(fps))       //取整后转为Int型
 }
 ```
+
+- 两种获取Document目录的方法
+```
+one: 
+let fileManager = FileManager.default
+let urls = fileManager.urls(for:.documentDirectory,in:.userDomainMask)
+let documentDirectory = urls[0] as NSURL
+let addUrl = documentDirectory.appendingPathComponent("string")
+
+two:
+let docDir = NSSearchPathForDirectoiesInDomains(.documentDirectory,.userDomainMask,true)[0]
+let addUrl = docDir + "String"
+```
