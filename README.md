@@ -250,3 +250,10 @@ UIColor(hue:,saturation:,brightness:,alpha:)
 ```
 
 - 传入两个闭包
+```
+typealias funA = (_ inOne:Int , _ inTwo:Int) -> Void
+typealias funB = (_ inOne:String) -> Int
+func set(one:@escaping funA , two:@escaping funB) {
+        
+}
+```
