@@ -218,3 +218,10 @@ self.testView.layer.removeAllAnimations()
 调用完该方法后，上述动画中的finish就会取得一个false值，表示的是改动画不是正常结束
 接着return就可以将之间邦在testView上的动画删除了
 ```
+- 添加约束后的viewController初始化的执行顺序
+```
+one:viewDidLoad//frame没有发生约束变化
+two:viewWillLayout//frame没有发生约束变化
+three:get{}//frame发生了约束变化
+four:viewDidLayout//frame发生了约束变化
+```
