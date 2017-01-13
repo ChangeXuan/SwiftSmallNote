@@ -225,3 +225,28 @@ two:viewWillLayout//frame没有发生约束变化
 three:get{}//frame发生了约束变化
 four:viewDidLayout//frame发生了约束变化
 ```
+
+- 比较随机的随机数
+```
+Int型：Int(arc4random_uniform(UInt32(200)))//0..<200
+```
+
+- 初始化控件的frame的方法
+```
+1:CGRect.init(x:y:width:height:)
+2:CGRect(x:y:width:height:)
+3:CGRect(origin:size)
+```
+
+- 取得父类ui的属性
+```
+self.superview......
+```
+
+- 使用色调，饱和度，亮度来设置颜色
+```
+//最大值为1，当饱和度，亮度为1时，色调从0增加到1时，颜色从000~255255255
+UIColor(hue:,saturation:,brightness:,alpha:)
+```
+
+- 传入两个闭包
