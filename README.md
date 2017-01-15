@@ -257,3 +257,13 @@ func set(one:@escaping funA , two:@escaping funB) {
         
 }
 ```
+
+- 描述一段由CGMutablePath()控制的layer动画
+```
+let animate:CAShapeLayer = CAShapeLayer()       //用来承接变化路径的实例
+let path = CGMutablePath()      //创建一个可以变化的路径
+path:
+     .move()    //定义起点
+     .addLine() //添加一条线
+     .addCurve() //添加点控制的曲线
+```
