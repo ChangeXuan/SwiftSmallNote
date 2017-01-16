@@ -267,3 +267,23 @@ path:
      .addLine() //添加一条线
      .addCurve() //添加点控制的曲线
 ```
+
+- collectionView的点击动画(这里是简单的变色动画)
+```
+    self.collect.delaysContentTouches = false //不加上这句的话，只能长按变色
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        print(indexPath.row)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.backgroundColor = UIColor.lightGray
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.backgroundColor = UIColor.yellow
+    }
+
+```
