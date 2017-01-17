@@ -361,3 +361,30 @@ let copyContent = UIPasteboard.general.string
         print("cancellMotion")
     }
 ```
+
+- 自定义操作符
+```Swift
+//符号前缀
+prefix operator <<|
+prefix func <<|(info:String) -> String {
+    
+    return "@\(info)"
+}
+let test = <<|"hi"
+
+//符号中缀
+infix operator <|>
+func <|>(left:String,right:String) -> String {
+    
+    return "@\(left)@\(right)"
+}
+let test1 = "world"<|>"hi"
+
+//符号后缀
+postfix operator |>>
+postfix func |>>(info:String) -> String {
+    
+    return "\(info)@"
+}
+let test2 = "hi"|>>
+```
