@@ -401,3 +401,28 @@ postfix func |>>(info:String) -> String {
 }
 let test2 = "hi"|>>
 ```
+- 创建渐变色的图层
+```Swift
+extension Array {
+
+    /// 渐变色
+    ///
+    /// - parameter frame: 渐变色图层的范围
+    ///
+    /// - returns: 渐变色图层
+    func gradientColor(_ frame:CGRect) -> CAGradientLayer {
+        let gradientLayer: CAGradientLayer = CAGradientLayer()
+        gradientLayer.frame = frame
+        gradientLayer.colors = self
+        let allColor:Int = self.count
+        var numArray:[NSNumber] = []
+        let disNum = 1.0/Double(allColor-1)
+        for num in 0..<allColor {
+            numArray.append(NSNumber.init(value: Double(num)*disNum))
+        }
+        gradientLayer.locations = numArray
+        return gradientLayer
+    }
+}
+
+```
