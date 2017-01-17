@@ -325,3 +325,24 @@ func applicationWillResignActive(_ application: UIApplication) {
 ```Swift
 let copyContent = UIPasteboard.general.string
 ```
+
+- 正则判断手机号码和邮箱
+```Swift
+    /// 判断该字符串是不是手机号码
+    ///
+    /// - returns: bool
+    func isPhoneValue() -> Bool {
+        let trueMask:String = "^1(3[0-9]|4[57]|5[0-35-9]|8[0-9]|7[0135678])\\d{8}$"
+        let phoneMask = NSPredicate.init(format: "SELF MATCHES %@", trueMask)
+        return phoneMask.evaluate(with: self)
+    }
+    
+    /// 判断该字符串是不是邮箱
+    ///
+    /// - returns: bool
+    func isEmailValue() -> Bool {
+        let trueMask:String = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
+        let emailMask = NSPredicate.init(format: "SELF MATCHES %@", trueMask)
+        return emailMask.evaluate(with: self)
+    }
+```
