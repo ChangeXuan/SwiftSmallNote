@@ -55,7 +55,7 @@
 - 看到一篇关于描述“线程”和“进程”的文章，个人认为写得比较通俗易懂http://www.ruanyifeng.com/blog/2013/04/processes_and_threads.html
 - 拓展swift的协议方法后，可以直接在遵循该协议的class中调用拓展的协议方法
 - 是navigationBar变透明，并把下端的那条黑线去掉
-```
+```Swift
 let img = UIImage()
 self.navigationController.navigationBar.setBackgroundImage(img,for:.default)
 self.navigationController.nacigationBar.shadowImage = img
@@ -63,13 +63,13 @@ self.navigationController.navigationBar.barStyle = .blackOpaque
 ```
 
 - 在iOS10设备上出现的键盘第一次弹起时获取的高度不对的问题，使用下面代码可以获得正确的高度(FUCK,有问题)
-```
+```Swift
 let keyInfo = (notification as NSNotification).userInfo![UIKeyboardFrameEndUserInfoKey]
 let height:CGFloat = (keyInfo! as AnyObject).cgRectValue.size.height//(origin.y)
 ```
 
 - tableView.reloadData()后想让tableView滑至最低端
-```
+```Swift
 （有问题）
 let sectionCout:Int = self.contentTableView.numberOfSections
         if sectionCout != 0 {
@@ -89,7 +89,7 @@ self.contantTableView.setContentOffset(CGPoint(x:0,y:self.contantTableView.frame
 - 在使用autolayout和约束进行布局时，如果要对某个对象添加阴影，应该在veiwWillLayoutSubviews中添加(其他的layout属性也是这样)
 - 在使用autolayout和约束进行布局时，如果要对cell添加阴影，在draw()中调用绘制阴影(因为UITableCell也是继承view的，所以每当启动cell时，就会调用draw函数，这样就避免了cell的长度大小不正确的问题)
 - 使用guard(守卫来检查text的输入值并转型后赋值给使用变量):
-```
+```Swift
 guard let text = xxxx.text , let xxxText = Int(text) else {
         print("error")
         return
@@ -97,7 +97,7 @@ guard let text = xxxx.text , let xxxText = Int(text) else {
 ```
 
 - 猫神写的延时操作，记录下：
-```
+```Swift
 func delay(_ timeInterval:TimeInterval,_ block: @escaping () -> Void) {
         let after = DispatchTime.now() + timeInterval
         DispatchQueue.main.asyncAfter(deadline:after,execute:block)
@@ -108,12 +108,12 @@ func delay(_ timeInterval:TimeInterval,_ block: @escaping () -> Void) {
 - 约束可以像控件一样拖入代码区然后进行属性修改
 - 当改变约束属性，并且想实现动画效果时，需要加上view.layoutIfNeeded()
 - 让textView从开头开始显示
-```
+```Swift
 self.textView.scrollRangeToVisible(NSRange(location:0,length:1))
 ```
 
 - 关于alamofire的get请求中中文问题：http://blog.csdn.net/u014134886/article/details/50997803
-```
+```Swift
 //错误示例
  let url : URLStringConvertible = "http://bai.com/test2/login/get.php?mobile=\(userPhone)&rename=\(username)"
 
@@ -141,21 +141,21 @@ self.textView.scrollRangeToVisible(NSRange(location:0,length:1))
 ```
 
 - 改变点击cell时的高亮颜色
-```
+```Swift
 let tapCellColor:UIColor = UIColor(red:96/255,green:54/255,blue:12/255,alpha:1.0)
 cell.selectedBackgroundView = UIView(frame:cell.frame)
 cell.selectedBackgroundView.backgroundColor = tapCellColor
 ```
 
 - 设置navigation的title，以及设置返回键和title的颜色
-```
+```Swift
 self.navigationItem.title = "xxx"//设置标题
 self.navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor]//设置title的颜色
 self.navigationController.navigationBar.tintColor = UIColor//设置返回键的颜色
 ```
 
 - 自适应内容的label(使用sizeThatFites和sizeToFit)
-```
+```Swift
 let label = UILable(frame:CGRect(x:100,y:100,width:0,height:0))
 label.font = UIFont.systemFont(ofSize:20)
 label.text = "hello label"
@@ -163,7 +163,7 @@ label.sizeToFit()
 ```
 
 - 帧数计算方法(使用CADisplayLink)
-```
+```Swift
 var lastTime:TimeInterval = 0
 var count:Int = 0
 
@@ -190,7 +190,7 @@ func tick(link:CADisplayLink) {
 ```
 
 - 两种获取Document目录的方法
-```
+```Swift
 one: 
 let fileManager = FileManager.default
 let urls = fileManager.urls(for:.documentDirectory,in:.userDomainMask)
@@ -203,7 +203,7 @@ let addUrl = docDir + "String"
 ```
 
 - 强制结束block动画
-```
+```Swift
 例如，我对一个testView进行动画描述
 UIView.animate(withDuration: 2, delay: 0, options: [.repeat,.autoreverse,.curveEaseInOut], animations: { 
             self.testView.alpha = 0
@@ -219,7 +219,7 @@ self.testView.layer.removeAllAnimations()
 接着return就可以将之间邦在testView上的动画删除了
 ```
 - 添加约束后的viewController初始化的执行顺序
-```
+```Swift
 one:viewDidLoad//frame没有发生约束变化
 two:viewWillLayout//frame没有发生约束变化
 three:get{}//frame发生了约束变化
@@ -227,30 +227,30 @@ four:viewDidLayout//frame发生了约束变化
 ```
 
 - 比较随机的随机数
-```
+```Swift
 Int型：Int(arc4random_uniform(UInt32(200)))//0..<200
 ```
 
 - 初始化控件的frame的方法
-```
+```Swift
 1:CGRect.init(x:y:width:height:)
 2:CGRect(x:y:width:height:)
 3:CGRect(origin:size)
 ```
 
 - 取得父类ui的属性
-```
+```Swift
 self.superview......
 ```
 
 - 使用色调，饱和度，亮度来设置颜色
-```
+```Swift
 //最大值为1，当饱和度，亮度为1时，色调从0增加到1时，颜色从000~255255255
 UIColor(hue:,saturation:,brightness:,alpha:)
 ```
 
 - 传入两个闭包
-```
+```Swift
 typealias funA = (_ inOne:Int , _ inTwo:Int) -> Void
 typealias funB = (_ inOne:String) -> Int
 func set(one:@escaping funA , two:@escaping funB) {
@@ -259,7 +259,7 @@ func set(one:@escaping funA , two:@escaping funB) {
 ```
 
 - 描述一段由CGMutablePath()控制的layer动画
-```
+```Swift
 let animate:CAShapeLayer = CAShapeLayer()       //用来承接变化路径的实例
 let path = CGMutablePath()      //创建一个可以变化的路径
 path:
@@ -269,7 +269,7 @@ path:
 ```
 
 - collectionView的点击动画(这里是简单的变色动画)
-```
+```Swift
     self.collect.delaysContentTouches = false //不加上这句的话，只能长按变色
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
@@ -289,7 +289,7 @@ path:
 ```
 
 - app生命周期内的系统相应(后台，前台，退出)
-```
+```Swift
 func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -319,4 +319,9 @@ func applicationWillResignActive(_ application: UIApplication) {
             print("222222") //程序结束后依旧能有数据操作，则会给出一定的时间来提供数据操作
         }
     }
+```
+
+- 取得剪切板上的内容
+```Swift
+let copyContent = UIPasteboard.general.string
 ```
