@@ -361,7 +361,20 @@ let copyContent = UIPasteboard.general.string
         print("cancellMotion")
     }
 ```
+- 重载操作符
+```Swift
+func +(left:CGPoint,right:CGPoint) -> CGPoint {
+    return CGPoint.init(x: left.x+right.x, y: left.y+right.y)
+}
 
+let a = 1+1
+print(a)
+
+let ap = CGPoint.init(x: 1, y: 1)
+let bp = CGPoint.init(x: 2, y: 2)
+
+print(ap+bp)
+```
 - 自定义操作符
 ```Swift
 //符号前缀
