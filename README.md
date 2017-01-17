@@ -346,3 +346,18 @@ let copyContent = UIPasteboard.general.string
         return emailMask.evaluate(with: self)
     }
 ```
+
+- 检测手机摇晃
+```Swift
+    override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
+        print("startMotion")
+    }
+    
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        print("endMotion")
+    }
+    
+    override func motionCancelled(_ motion: UIEventSubtype, with event: UIEvent?) {
+        print("cancellMotion")
+    }
+```
