@@ -426,3 +426,5 @@ extension Array {
 }
 
 ```
+
+- 出现“Reason：image not found”错误，可以把导入的framework的后选项设为option
