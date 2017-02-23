@@ -428,3 +428,9 @@ extension Array {
 ```
 
 - 出现“Reason：image not found”错误，可以把导入的framework的后选项设为option
+
+- 给录音程序在后台运行的权利，并显示正在运行的状态条
+```
+1.在info.plist中添加Required background modes
+2.在下拉的其中一个item中添加 App plays audio or streams audio/video using AirPlay
+```
