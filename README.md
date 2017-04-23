@@ -434,3 +434,17 @@ extension Array {
 1.在info.plist中添加Required background modes
 2.在下拉的其中一个item中添加 App plays audio or streams audio/video using AirPlay
 ```
+
+- UIImage转Data
+```
+//one
+let imgData:Data = UIImageJPEGRepresentation(image,0.8) 
+//two
+let imgUrl:URL = Bundle.main.url(forResource:"name",withExtension:"jpg")
+let imgData:Data = try! Data(contentsOf:imgUrl)
+```
+
+
+
+
+
