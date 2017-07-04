@@ -444,6 +444,11 @@ let imgUrl:URL = Bundle.main.url(forResource:"name",withExtension:"jpg")
 let imgData:Data = try! Data(contentsOf:imgUrl)
 ```
 
+- Pods导入Lottie后，需要建立桥接文件链接Oc和swift
+```
+在桥接头文件中写入
+#import <Lottie/Lottie.h>
+```
 
 
 
